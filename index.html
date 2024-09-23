@@ -11,23 +11,24 @@
         }
         * {
             font-family: 'heavitas', Arial, sans-serif; /* Apply to the entire page with fallbacks */
-        }
-        body {
-        	font-family: 'heavitas',;
-            background-color: #222;
             margin: 0;
             padding: 0;
+            box-sizing: border-box; /* Ensure consistent sizing */
+        }
+        body {
+            font-family: 'heavitas';
+            background-color: #222;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            font-size: 16px; /* Set base font size for scalability */
         }
         .header, .footer {
-        	font-family: 'heavitas';
+            font-family: 'heavitas';
             background-color: #333;
             color: #fff;
             text-align: center;
             padding: 15px 10px;
-            z-index: 1;
         }
         .header {
             font-size: 24px;
@@ -37,7 +38,7 @@
             font-size: 14px;
         }
         .calculator {
-        	font-family: 'heavitas';
+            font-family: 'heavitas';
             background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
@@ -45,31 +46,31 @@
             max-width: 400px;
             width: 90%;
             margin: 20px auto;
-            box-sizing: border-box;
         }
         h1 {
-        	color: #222;
-        	font-family: 'heavitas';
+            font-family: 'heavitas';
+            color: #222;
             text-align: center;
+            font-size: 22px; /* Adjust font size for better scalability */
         }
         label {
-        	font-family: 'heavitas';
-            display: block;
+            font-family: 'heavitas';
             margin-top: 15px;
+            font-size: 16px; /* Set label font size */
         }
         input[type="number"] {
-        	font-family: 'heavitas';
+            font-family: 'heavitas';
             width: 100%;
             padding: 10px;
             margin-top: 5px;
-            box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 4px;
             background-color: #fff;
             color: #000;
+            font-size: 16px; /* Set input font size */
         }
         button {
-        	font-family: 'heavitas';
+            font-family: 'heavitas';
             display: block;
             width: 100%;
             padding: 12px;
@@ -80,12 +81,13 @@
             font-size: 16px;
             cursor: pointer;
             margin-top: 20px;
+            transition: background-color 0.3s ease;
         }
         button:hover {
             background-color: #333;
         }
         .result {
-        	font-family: 'heavitas';
+            font-family: 'heavitas';
             margin-top: 20px;
             padding: 10px;
             background-color: #222;
@@ -95,9 +97,34 @@
         }
         .result h3, .result p {
             margin: 0;
+            font-size: 16px; /* Set result font size */
         }
         .footer {
             margin-top: auto;
+            padding: 15px 10px;
+        }
+        /* Media Query for Smaller Screens */
+        @media (max-width: 600px) {
+            body {
+                font-size: 14px; /* Adjust base font size */
+            }
+            .header, .footer {
+                padding: 10px 5px;
+                font-size: 18px; /* Adjust header/footer font size */
+            }
+            h1 {
+                font-size: 20px; /* Adjust heading size */
+            }
+            label {
+                font-size: 14px; /* Adjust label size */
+            }
+            input[type="number"], button, .result h3, .result p {
+                font-size: 14px; /* Adjust input, button, and result size */
+            }
+            .calculator {
+                padding: 15px;
+                width: 95%; /* Increase calculator width */
+            }
         }
     </style>
 </head>
@@ -132,7 +159,7 @@
     </div>
 
     <div class="footer">
-        &copy; <span id="year"></span> unfazd.
+        &copy; <span id="year"></span> UK Zakat Calculator. All rights reserved.
     </div>
 
     <script>
